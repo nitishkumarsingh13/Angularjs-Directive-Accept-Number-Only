@@ -37,6 +37,7 @@ angular.module('mainApp', [])
               if (attrs.min && !isNaN(attrs.min) && newValue) {
                 if (newValue < attrs.min) {
                   ngModel.$setValidity("min", false);
+                  ngModel.$setViewValue(attrs.min);
                 } else {
                   ngModel.$setValidity("min", true);
                 }
@@ -47,6 +48,7 @@ angular.module('mainApp', [])
               if (attrs.max && !isNaN(attrs.max) && newValue) {
                 if (newValue > attrs.max) {
                   ngModel.$setValidity("max", false);
+                  ngModel.$setViewValue(attrs.max);
                 } else {
                   ngModel.$setValidity("max", true);
                 }
